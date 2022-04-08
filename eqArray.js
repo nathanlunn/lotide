@@ -12,7 +12,11 @@ const eqArrays  = function(actual, expected) {
   }
 
   for (let i = 0; i < actual.length; i++) {
-    if (actual[i] !== expected[i]) {
+    if (Array.isArray(actual[i])) {
+      if (!eqArrays(actual[i], expected[i])) {
+        return false;
+      }
+    } else if (actual[i] !== expected[i]) {
       return false;
     }
   }
@@ -24,5 +28,5 @@ const eqArrays  = function(actual, expected) {
 // assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
 
 assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]), true);
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false);
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]), false);
+// assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false);
+// assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]), false);
