@@ -1,5 +1,3 @@
-const eqArray  = require('./eqArray');
-
 const eqObjects = require('./eqObjects');
 
 const assertObjectsEqual = function(actual, expected) {
