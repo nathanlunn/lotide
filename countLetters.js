@@ -1,5 +1,3 @@
-const assertObjectsEqual = require('./assertObjectsEqual');
-
 const countLetters = function(string) {
   let result = {};
 
@@ -16,4 +14,4 @@ const countLetters = function(string) {
   return result;
 };
 
-assertObjectsEqual(countLetters("this this thisr"), {t: 3, h: 3, i: 3, s: 3, r: 1});
+module.exports = countLetters;

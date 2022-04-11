@@ -1,7 +1,3 @@
-const assertArraysEqual = require('./assertArraysEqual');
-
-const words = ["ground", "control", "to", "major", "tom"];
-
 const map = function(array, callback) {
   const results = [];
 
@@ -12,4 +8,4 @@ const map = function(array, callback) {
   return results;
 };
 
-assertArraysEqual(map(words, word => word[0]), [ 'g', 'c', 't', 'm', 't' ]);
+module.exports = map;
